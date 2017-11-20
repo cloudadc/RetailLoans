@@ -1,0 +1,28 @@
+<configuration>
+  <imports>
+    <imports>
+      <import>
+        <type>java.lang.Number</type>
+      </import>
+      <import>
+        <type>sbilms.Customer</type>
+      </import>
+      <import>
+        <type>sbilms.XpressProduct</type>
+      </import>
+      <import>
+        <type>sbilms.XPressProduct</type>
+      </import>
+      <import>
+        <type>sbilms.FinancialInfo</type>
+      </import>
+      <import>
+        <type>java.util.List</type>
+      </import>
+      <import>
+        <type>java.util.ArrayList</type>
+      </import>
+    </imports>
+  </imports>
+  <version>1.0</version>
+</configuration>

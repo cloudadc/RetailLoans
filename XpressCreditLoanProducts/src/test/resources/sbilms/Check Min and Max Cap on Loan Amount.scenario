@@ -1,0 +1,126 @@
+<scenario>
+  <name>Check Min and Max Cap on Loan Amount.scenario</name>
+  <maxRuleFirings>100000</maxRuleFirings>
+  <globals/>
+  <fixtures>
+    <fact-data>
+      <type>Customer</type>
+      <fieldData>
+        <field-data>
+          <name>age</name>
+          <value>18</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>Applicant</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <fact-data>
+      <type>FinancialInfo</type>
+      <fieldData>
+        <field-data>
+          <name>isSBISalaryAccount</name>
+          <value>true</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>noOfXpressCreditTopups</name>
+          <value>1</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>RGScore</name>
+          <value>3</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>existingTopupDisbursedMonths</name>
+          <value>13</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>NMI</name>
+          <value>5000.0</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>Financials</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <execution-trace>
+      <executionTimeResult>271</executionTimeResult>
+      <numberOfRulesFired>34</numberOfRulesFired>
+    </execution-trace>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>rejectedLoanProduct</fieldName>
+          <expected>true</expected>
+          <actualResult></actualResult>
+          <successResult>true</successResult>
+          <explanation>[XPressProduct] field [rejectedLoanProduct] was [true].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+        <expect-field>
+          <fieldName>loanScehme</fieldName>
+          <expected>Xpress Credit</expected>
+          <actualResult>Xpress Credit Elite</actualResult>
+          <successResult>true</successResult>
+          <explanation>[XPressProduct] field [loanScehme] was [Xpress Credit].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+        <expect-field>
+          <fieldName>rejectionReason</fieldName>
+          <expected>Low NMI</expected>
+          <actualResult></actualResult>
+          <successResult>true</successResult>
+          <explanation>[XPressProduct] field [rejectionReason] was [Low NMI].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>XPressProduct</name>
+      <anonymous>true</anonymous>
+    </expect-fact>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>loanScehme</fieldName>
+          <expected>Xpress Credit Elite</expected>
+          <actualResult>Xpress Credit</actualResult>
+          <successResult>true</successResult>
+          <explanation>[XPressProduct] field [loanScehme] was [Xpress Credit Elite].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+        <expect-field>
+          <fieldName>rejectedLoanProduct</fieldName>
+          <expected>true</expected>
+          <actualResult></actualResult>
+          <successResult>false</successResult>
+          <explanation>[XPressProduct] field [rejectedLoanProduct] was [] expected [true].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>XPressProduct</name>
+      <anonymous>true</anonymous>
+    </expect-fact>
+  </fixtures>
+  <lastRunResult>2017-11-13 01:28:52.834 UTC</lastRunResult>
+  <rules/>
+  <inclusive>true</inclusive>
+  <packageName>sbilms</packageName>
+  <imports>
+    <imports>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>java.util.Collection</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+    </imports>
+  </imports>
+  <ksessions>
+    <string>defaultKieSession</string>
+  </ksessions>
+</scenario>

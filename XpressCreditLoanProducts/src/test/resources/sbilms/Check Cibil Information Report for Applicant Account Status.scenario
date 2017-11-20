@@ -1,0 +1,68 @@
+<scenario>
+  <name>Check Cibil Information Report for Applicant Account Status.scenario</name>
+  <maxRuleFirings>100000</maxRuleFirings>
+  <globals/>
+  <fixtures>
+    <fact-data>
+      <type>FinancialInfo</type>
+      <fieldData>
+        <field-data>
+          <name>cibilAccountStatus</name>
+          <value>Suit Filed</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>DPDMoreThan30Days</name>
+          <value>true</value>
+          <nature>1</nature>
+        </field-data>
+        <field-data>
+          <name>noOfDPDOver60DaysinYears</name>
+          <value>2</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>numberOfOverdueLast24Months</name>
+          <value>1</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>numberOfEnquiresWithinMonth</name>
+          <value>2</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>Financials</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <execution-trace>
+      <executionTimeResult>216</executionTimeResult>
+      <numberOfRulesFired>25</numberOfRulesFired>
+    </execution-trace>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>CIRApproval</fieldName>
+          <expected>Reject</expected>
+          <actualResult></actualResult>
+          <successResult>true</successResult>
+          <explanation>[Financials] field [CIRApproval] was [Reject].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>Financials</name>
+      <anonymous>false</anonymous>
+    </expect-fact>
+  </fixtures>
+  <lastRunResult>2017-11-13 00:25:25.690 UTC</lastRunResult>
+  <rules/>
+  <inclusive>false</inclusive>
+  <packageName>sbilms</packageName>
+  <imports>
+    <imports/>
+  </imports>
+  <ksessions>
+    <string>defaultKieSession</string>
+  </ksessions>
+</scenario>
